@@ -10,11 +10,11 @@ STRIDES = (2,2)
 KERNEL = (7,7)
 
 # LAYERS
-def ConvLayer(filters, kernel = KERNEL, strides = STRIDES):
-    return Conv2D ( filters, kernel_size = kernel, padding='same', strides = strides, activation = 'relu' )
+def ConvLayer(filters, kernel = KERNEL, strides = STRIDES, activation = 'relu'):
+    return Conv2D ( filters, kernel_size = kernel, padding='same', strides = strides, activation = activation )
 
-def DeConvLayer(filters, kernel = KERNEL, strides = STRIDES):
-    return Conv2DTranspose(filters, kernel_size = kernel, padding='same', strides = strides, activation = 'relu')
+def DeConvLayer(filters, kernel = KERNEL, strides = STRIDES, activation = 'relu'):
+    return Conv2DTranspose(filters, kernel_size = kernel, padding='same', strides = strides, activation = activation )
 
 def ConvLayers(in_image, filters, drop_rate = 0.1):
     flow = in_image
@@ -26,10 +26,14 @@ def ConvLayers(in_image, filters, drop_rate = 0.1):
 
 def DeConvLayers(in_image, filters, drop_rate = 0.1):
     flow = in_image
-    for f in filters:
-        flow = DeConvLayer(f) ( flow )
-        flow = Dropout ( drop_rate ) ( flow)
-        flow = BatchNormalization () ( flow )
+    for i in range(len(filters)):
+        f = filters[i]
+        if i == len(filters) - 1:
+            flow = DeConvLayer ( f, activation = 'sigmoid' ) ( flow ) 
+        else:
+            flow = DeConvLayer( f ) ( flow )
+            flow = Dropout ( drop_rate ) ( flow )
+            flow = BatchNormalization () ( flow )
     return flow
 
 
@@ -52,8 +56,8 @@ def Im2Im(im_shape):
     gen_flow = Reshape ( conv_shape ) ( gen_flow )
 
     gen_flow = DeConvLayers ( gen_flow, channels [ -1 :: -1 ] [ 1: ] ) #  transpose convolution
-    G_out = Activation ( 'sigmoid' ) ( gen_flow ) # output image
-
+    G_out = gen_flow
+    
     model = Model(G_in, G_out)
     
     sgd = SGD(lr = 10,momentum=0.1)
