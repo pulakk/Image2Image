@@ -11,7 +11,7 @@
 
 # Training New Models
 
-The main file to be used is `run.py`. Using the help argument `-h` we can view the various arguments are available for training the model.
+The main file to be used is `run.py`. Using the help argument `-h` we can view the various arguments which are available for training a model.
 ```
 usage: run.py [-h] [-t] [-r] [-g] [-s SIZE] [-e EPOCHS] [-b BATCH_SIZE]
               model_file_path input_folder output_folder predictions_folder
