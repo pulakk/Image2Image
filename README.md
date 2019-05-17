@@ -4,6 +4,9 @@
 |Input Image | Output Image | Predicted Output |
 |----------- | ------------ | --------------- |
 |<img src="https://github.com/mizimo/Image2Image/raw/master/performance/pokemon/1_X.png">| <img src="https://github.com/mizimo/Image2Image/raw/master/performance/pokemon/1_Y.png"> | <img src="https://github.com/mizimo/Image2Image/raw/master/performance/pokemon/1_Y_.png"> |
+
+|Input Image | Output Image | Predicted Output |
+|----------- | ------------ | --------------- |
 |<img src="https://github.com/mizimo/Image2Image/raw/master/performance/depth/0_X.png">| <img src="https://github.com/mizimo/Image2Image/raw/master/performance/depth/0_Y.png"> | <img src="https://github.com/mizimo/Image2Image/raw/master/performance/depth/0_Y_.png"> |
 
 # Training New Models
