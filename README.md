@@ -1,11 +1,11 @@
 # Image to Image Neural Network - Sequential Model
 
 
-|Input Image | Output Image | Predicted Output |
+|Input Image (32 x 32 x 3) | Output Image (32 x 32 x 3) | Predicted Output (32 x 32 x 3) |
 |----------- | ------------ | --------------- |
 |<img src="https://github.com/mizimo/Image2Image/raw/master/performance/pokemon/1_X.png">| <img src="https://github.com/mizimo/Image2Image/raw/master/performance/pokemon/1_Y.png"> | <img src="https://github.com/mizimo/Image2Image/raw/master/performance/pokemon/1_Y_.png"> |
 
-|Input Image | Output Image | Predicted Output |
+|Input Image (32 x 32 x 1) | Output Image (32 x 32 x 1) | Predicted Output (32 x 32 x 1) |
 |----------- | ------------ | --------------- |
 |<img src="https://github.com/mizimo/Image2Image/raw/master/performance/depth/0_X.png">| <img src="https://github.com/mizimo/Image2Image/raw/master/performance/depth/0_Y.png"> | <img src="https://github.com/mizimo/Image2Image/raw/master/performance/depth/0_Y_.png"> |
 
