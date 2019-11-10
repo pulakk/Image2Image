@@ -37,5 +37,7 @@ optional arguments:
 New models can be trained in the following way
 - Collect input images and output images in two separate folders - `input_folder` and `output_folder`. The corresponding input and output images should have the same names. 
 - Create another folder for the predicted images - `predictions_folder`
-- Use the command `python run.py path/to/model.h5 input/folder output/folder prediction/folder` in the root folder. Use `-g` argument to train on grayscale images. 
-- Run `python run.py -t path/to/model.h5 test/input/folder test/output/folder test/predictions/folder` for testing the performance on untrained test images
+- Use the command `python3 run.py path/to/model.h5 input/folder output/folder prediction/folder` in the root folder. Use `-g` argument to train on grayscale images. 
+- Run `python3 run.py -t path/to/model.h5 test/input/folder test/output/folder test/predictions/folder` for testing the performance on untrained test images
+
+** Used python 3.7.4
