@@ -17,7 +17,7 @@ def get_idct_samples(Y_, shape):
     return Y__
 
 def run(path_x, path_y, path_y_, path_model, 
-        testing, retrain, grayscale, size, epochs, batch_size, dct_size):
+        testing, replace, grayscale, size, epochs, batch_size, dct_size):
 
     if testing:
         im2im = load_model(path_model)
@@ -35,7 +35,7 @@ def run(path_x, path_y, path_y_, path_model,
         in_shape = (size, size, 1 if grayscale else 3)
         out_shape = (dct_size, dct_size, 1 if grayscale else 3)
 
-        if retrain:
+        if replace:
             im2im = Im2Im(in_shape, out_shape)
             print("New Model created.")
         else:
@@ -107,7 +107,7 @@ if __name__=='__main__':
     parser.add_argument('predictions_folder', help = 'folder path for predicted images')
 
     parser.add_argument('-t','--testing', action = 'store_true', help = 'whether testing model')
-    parser.add_argument('-r','--retrain', action = 'store_true', help = 'retrain model again')
+    parser.add_argument('-r','--replace', action = 'store_true', help = 'Replace exising model.')
 
     parser.add_argument('-g','--grayscale', action = 'store_true', help='whether to train only for gray images')
     parser.add_argument('-s','--size', type=int, default = 32, help='size (width/height) of image')
@@ -138,7 +138,7 @@ if __name__=='__main__':
         args.predictions_folder, 
         args.model_file_path,
         args.testing,
-        args.retrain,
+        args.replace,
         args.grayscale,
         args.size,
         args.epochs,
