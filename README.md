@@ -3,7 +3,7 @@
 
 |Input Image (32 x 32 x 3) | Output Image (32 x 32 x 3) | Predicted Output (32 x 32 x 3) |
 |----------- | ------------ | --------------- |
-|<img src="https://github.com/mizimo/Image2Image/raw/master/performance/pokemon/1_X.png">| <img src="https://github.com/mizimo/Image2Image/raw/master/performance/pokemon/1_Y.png"> | <img src="https://github.com/mizimo/Image2Image/raw/master/performance/pokemon/1_Y_.png"> |
+|<img src="https://github.com/mizimo/Image2Image/raw/master/performance/pokemon/1_X.png">| <img src="https://github.com/mizimo/Image2Image/raw/master/performance/pokemon/1_Y.png"> | <img src="https://github.com/mizimo/Image2Image/raw/master/performance/pokemon/1_Y*.png"> |
 
 |Input Image (32 x 32 x 1) | Output Image (32 x 32 x 1) | Predicted Output (32 x 32 x 1) |
 |----------- | ------------ | --------------- |
